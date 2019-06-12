@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+                <h1>hi there, {{{user.username}}}</h1>
+    </div>
+
+</div>
+<div class="container pt-5">
+        <div class ="row">
+            <div class="col-3 card mr-5">
+                <p class="text-center">Create a Chatroom</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="chatName" placeholder="Chat Name">
+                    <textarea type="text" class="form-control my-3" name="about" placeholder="About"></textarea>
+                    <input class="form-control" type="submit">
+                </div>
+            </div>
+            <div class="col-4 mx-3">
+                <h5 class="pb-3">here are all the chats</h5>
+                <div>
+                    {{#each allChatroom}}
+                        <a href="/rooms/{{this._id}}"><h6>{{this.chatName}}</h6></a>
+                        <p>{{this.about}}</p>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-4">
+                <h5 class="pb-3">here are your chats</h5>
+
+                <div>
+                    {{#each myChatrooms}}
+                        <a href="/rooms/{{this.chatName}}"><h6>{{this.chatName}}</h6></a>
+                        <p>{{this.about}}</p>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+
+</div>
+
+
+
